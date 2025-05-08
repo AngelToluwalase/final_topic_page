@@ -1,0 +1,194 @@
+:root {
+    --bg: #4a6b65; 
+    --lbg: #92b076; 
+    --fg: #eaeaea;
+    --acc: rgb(115, 163, 103); /*come back and pick accent colour*/
+    --head: "Rock 3D", system-ui, sans-serif;
+    --body: "Yusei Magic", sans-serif;
+}
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover {
+    color: var(--acc);
+}
+a:active {
+    color: var(--acc);
+}
+
+html {
+    font-size: 62.6%;
+}
+.rock-3d-regular {
+    font-family: "Rock 3D", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.yusei-magic-regular {
+    font-family: "Yusei Magic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+body {
+        height: 98vh; /*i think i messed up here, do i delete this*/
+        font-size: 1.6rem;
+        font-family: var(--body); 
+        font-weight: 400; /*come back to this once i choose a font- use the recommended weight*/
+        line-height: 1.15;
+}
+body {
+    background: var(--lbg);
+    color: var(--fg);
+}
+h1 {font-size: 3.6rem;}
+h2 {font-size: 2.8rem;}
+h3 {font-size: 2.4rem;}
+h4 {font-size: 2rem;}
+h5 {font-size: 1.8rem;}
+h6 {font-size: 1.6rem;}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    font-family: "Luckiest Guy", serif; /*come back to this-choose font i want from google font-then serif*/
+    color: var(--acc);
+}
+img {
+    width: 100%;
+    height: auto; 
+}
+svg {
+    height: 100%;
+    width: 100%;
+    fill: currentColor;
+    pointer-events: none;
+}
+
+nav, footer {
+    background-color: #572c2c; /*change header and footer color*/
+    color: var(--fg);
+    color: #EAEAEA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem; 
+}
+nav div {
+    display: flex;
+}
+.logo {
+    align-items: center;
+    gap: 2rem;
+}
+.logo h1 {
+    padding-top: 10px;
+    font-size: 2.8rem;
+}
+.links {
+    gap: 4rem;
+    font-size: 1.2em;
+}
+nav img {
+    height: 6rem;
+    width: auto;
+}
+main {
+    max-width: 78vw;
+    margin: auto;
+    background: var(--bg);/* rgba(255, 255, 255, 0.92); */ /*come back to this, change to how you want*/
+}
+blockquote {
+    font-size: 3.6rem;
+    max-width: 33vw;
+    font-family: var(--head);
+    margin: auto;
+}
+figure {
+    border: 1px dashed white;
+}
+.cite {
+    font-family: var(--body);
+    margin-top: 0;
+    font-size: 1.6rem;
+    text-align: right;
+    display: inline-block;
+    width: 100%;
+}
+.quote {
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 4rem 0; /*0 0 4rem 0; this is what is was origianlly incase changes do not work*/
+    margin: 3rem auto; /*3rem auto; original*/
+    outline: 2px dashed var(--fg);
+    outline-offset: -2rem;
+}
+blockquote:before {
+    content: '"';
+    font-family: serif;
+    font-weight: bolder;
+    font-size: 8rem;
+    position: relative;
+    left: -5vw;
+    top: 6vh;
+    color: var(--acc);
+}
+section {
+    display: grid;
+    margin: 3rem auto;
+    grid-gap: 3rem;
+    padding: 2rem;
+}
+section.odd {
+    grid-template-columns: 8fr 4fr;
+    outline: 2px solid var(--fg); /*this makes the picture areas dashed but not the actual pictures themeselves*/
+}
+section.even {
+    grid-template-columns: 4fr 8fr;
+}
+div.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.more-links {
+    color: var(--fg);
+    width: 14rem;
+    padding: 1rem 2rem;
+    box-sizing: content-box;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 2rem auto;
+    border-radius: 2rem; /*you can choose between .5rem, 50%, 100%*/
+    border: 2px solid var(--fg);
+    transition: all 150ms ease-in;
+}
+.more-links:hover {
+    background: var(--acc);
+}
+/*media Queries*/
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 2rem;
+}
+    section.even, section.odd {
+        grid-template-columns: 1fr;
+}
+    section.even div.poster {
+        order: -1;
+}
+}
