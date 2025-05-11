@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 :root {
     --bg: #4a6b65; 
     --lbg: #92b076; 
@@ -40,7 +45,7 @@ html {
     font-style: normal;
 }
 body {
-        height: 98vh; /*i think i messed up here, do i delete this*/
+        height: 98vh; /*i think i messed up here, do i delete this-orginal is 98vh*/
         font-size: 1.6rem;
         font-family: var(--body); 
         font-weight: 400; /*come back to this once i choose a font- use the recommended weight*/
@@ -177,7 +182,9 @@ div.text {
     transition: all 150ms ease-in;
 }
 .more-links:hover {
+    display: inline-block;
     background: var(--acc);
+    color: white;
 }
 /*media Queries*/
 @media screen and (max-width: 768px) {
