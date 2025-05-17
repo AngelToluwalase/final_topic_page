@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rock+3D&family=Yusei+Magic&display=swap">
 </head>
     <body>
+        <audio id="bg-music" src="audio/www.voicy.network.mp3" loop></audio>
+
+        <button id="audio-btn">Play Music</button>
             <nav>
                 <img src="img/Ghibli-icon.jpg" alt="site/logo"> <!--come back to this and add my own logo-->
                 <div class="logo">
@@ -33,6 +36,17 @@
                 </div>
             </nav>
         <main>
+            <section class="slideshow-container">
+                <div class="slide fade">
+                  <img src="img/haku-spirited-away.jpg" alt="Slide 1">
+                </div>
+                <div class="slide fade">
+                  <img src="img/howls-gov-council.jpg" alt="Slide 2">
+                </div>
+                <div class="slide fade">
+                  <img src="img/kiki's-delivery-service-garden.jpg" alt="Slide 3">
+                </div>
+              </section>
                 <header>
                     <section class="even">
     
@@ -57,6 +71,14 @@
                         <a class="more-links" href="#">More 
                             <i class="bi-arrow-right"></i>
                         </a> 
+                    </div>
+                    <div class="audio-controls">
+                        <button onclick="playAudio('Spirted-Away')">Play Theme</button>
+                        <button onclick="pauseAudio('Spirted-Away')">Pause</button>
+                      </div>
+                    
+                      <!-- Hidden audio element -->
+                      <audio id="Spirted-Away" src="audio/Voicy_The Witcher baba controls you....mp3"></audio>
                     </div>
                 </section>
                 <section class="even">
@@ -93,5 +115,43 @@
             <footer>
                 <p>&copy;2025 Angel O. Toluwalase</p>
             </footer>
+            <script>
+                let slideIndex = 0;
+                showSlides();
+                function showSlides() {
+                  let slides = document.getElementsByClassName("slide");
+                  for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                  }
+                  slideIndex++;
+                  if (slideIndex > slides.length) {slideIndex = 1}    
+                  slides[slideIndex-1].style.display = "block";  
+                  setTimeout(showSlides, 5000); // Change every 3 seconds
+                }
+              </script>
+              <script>
+                const audio = document.getElementById('bg-music');
+                const btn = document.getElementById('audio-btn');
+              
+                btn.addEventListener('click', () => {
+                  if (audio.paused) {
+                    audio.play();
+                    btn.textContent = 'Pause Music';
+                  } else {
+                    audio.pause();
+                    btn.textContent = 'Play Music';
+                  }
+                });
+                function playAudio(id) {
+                const audio = document.getElementById(id);
+                audio.play();
+              }
+            
+              function pauseAudio(id) {
+                const audio = document.getElementById(id);
+                audio.pause();
+              }     
+              </script>
+                    
     </body>
 </html>

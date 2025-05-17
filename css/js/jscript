@@ -1,0 +1,22 @@
+function playAudio(id) {
+    const audio = document.getElementById(id);
+    audio.play();
+  }
+
+  function pauseAudio(id) {
+    const audio = document.getElementById(id);
+    audio.pause();
+  }
+
+const audio = document.getElementById('bg-music');
+const btn = document.getElementById('audio-btn');
+
+btn.addEventListener('click', () => {
+  if (audio.paused) {
+    audio.play();
+    btn.textContent = 'Pause Music';
+  } else {
+    audio.pause();
+    btn.textContent = 'Play Music';
+  }
+});

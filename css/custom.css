@@ -45,7 +45,7 @@ html {
     font-style: normal;
 }
 body {
-        height: 98vh; /*i think i messed up here, do i delete this-orginal is 98vh*/
+        /*height: 98vh; /*i think i messed up here, do i delete this-orginal is 98vh*/
         font-size: 1.6rem;
         font-family: var(--body); 
         font-weight: 400; /*come back to this once i choose a font- use the recommended weight*/
@@ -64,8 +64,8 @@ h6 {font-size: 1.6rem;}
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
-    font-family: "Luckiest Guy", serif; /*come back to this-choose font i want from google font-then serif*/
-    color: var(--acc);
+    font-family: "Luckiest Guy", serif; /*come back to this-choose font i want from google font-then serif,Luckiest Guy*/
+    color: var(--fg);
 }
 img {
     width: 100%;
@@ -181,6 +181,87 @@ div.text {
     border: 2px solid var(--fg);
     transition: all 150ms ease-in;
 }
+.audio-controls {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .audio-controls button {
+    background-color: var(--acc);
+    color: var(--fg);
+    font-family: var(--body);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .audio-controls button:hover {
+    background-color: var(--fg);
+    color: var(--bg);
+  }
+#audio-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: none;
+  background-color: var(--acc);
+  color: white;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+#audio-btn:hover {
+  background-color: #6e61ca;
+}
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .slide {
+    display: none;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .fade {
+    animation: fadeEffect 4s ease-in-out;
+  }
+  
+  @keyframes fadeEffect {
+    from {opacity: 0.4}
+    to {opacity: 1}
+  }
+  .text, .poster, header img {
+    animation: fadeInUp 1.2s ease both;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 40px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  .more-links:hover {
+    transition: all 0.3s ease;
+    transform: scale(1.05);
+    color: #6e61ca;
+  }
 .more-links:hover {
     display: inline-block;
     background: var(--acc);
